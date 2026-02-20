@@ -28,7 +28,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         SetGeneratingImg(true);
-        const response = await fetch("http://localhost:8080/api/pxlmind", {
+        const response = await fetch("https://pixelmind-project-4aeo.vercel.app/api/pxlmind", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
