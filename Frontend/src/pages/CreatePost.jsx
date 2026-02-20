@@ -54,7 +54,7 @@ const CreatePost = () => {
       setLoading(true);
 
       try {
-        const response = await fetch("http://localhost:8080/api/post", {
+        const response = await fetch("https://pixelmind-project-4aeo.vercel.app/api/post", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
