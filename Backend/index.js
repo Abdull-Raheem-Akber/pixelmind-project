@@ -11,8 +11,9 @@ dotenv.config();
 // Middleware && Variables
 
 const app = express();
+
 app.use(cors({
-  origin: "https://pixelmind-project-frontend.vercel.app"
+  origin: ["https://pixelmind-project-frontend.vercel.app"]
 }));
 app.use(express.json({ limit: "5mb" }));
 app.use('/api/post',postRoutes)
@@ -21,18 +22,6 @@ app.use('/api/pxlmind',pixelMindRoutes)
 
 
 
-// const startServer = async () => {
-//   try {
-//     connectDB(process.env.MONGODB_URL);
-//     app.listen(8080, () => {
-//       console.log("Server has started on port http://localhost:8080");
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// startServer();
 connectDB(process.env.MONGODB_URL);
 
 export default app;
