@@ -1,14 +1,15 @@
-import mongoose from "mongoose";
 
-const connectDB = (url) => {
-  mongoose.set("strictQuery", true);
-
-  mongoose
-    .connect(url)
-
-    .then(() => console.log("MongoDb Connected"))
-
-    .catch((err) => console.log(`Error in DataBase Connection${err}`));
+const connectDB = async (url) => {
+  try {
+    mongoose.set("strictQuery", true);
+    await mongoose.connect(url, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("MongoDB Connected ");
+  } catch (err) {
+    console.log("Error in Database Connection ", err);
+  }
 };
 
 export default connectDB;

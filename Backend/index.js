@@ -11,16 +11,15 @@ dotenv.config();
 // Middleware && Variables
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://pixelmind-project-frontend.vercel.app"
+}));
 app.use(express.json({ limit: "5mb" }));
 app.use('/api/post',postRoutes)
 app.use('/api/pxlmind',pixelMindRoutes)
 
 
 
-app.get("/", async (req, res) => {
-  res.send("Hello from PixelMind");
-});
 
 // const startServer = async () => {
 //   try {
